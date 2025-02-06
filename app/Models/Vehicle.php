@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Record;
 use Illuminate\Database\Eloquent\Model;
 
 class Vehicle extends Model
