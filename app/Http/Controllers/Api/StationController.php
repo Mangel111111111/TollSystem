@@ -14,7 +14,9 @@ class StationController extends Controller
     public function index()
     {
         $stations = Station::with('records')->get();
-        return response()->json($stations, 200);
+
+        return response()
+        ->json($stations, 200);
     }
 
     public function show(string $id)
@@ -24,6 +26,9 @@ class StationController extends Controller
         if (!$station) {
             return response()->json(['message' => 'Station not found'], 404);
         }
+
+        return response()
+        ->json($station, 200);
 
         $station->load('records');
     }
@@ -39,7 +44,9 @@ class StationController extends Controller
         ]);
 
         $station = Station::create($data);
-        return response()->json($station, 201);
+
+        return response()
+        ->json($station, 201);
     }
 
     
@@ -61,7 +68,8 @@ class StationController extends Controller
 
         $station->update($data);
 
-        return response()->json($station, 200);
+        return response()
+        ->json($station, 200);
     }
 
     /**
@@ -76,6 +84,8 @@ class StationController extends Controller
         }
 
         $station->delete();
-        return response()->json(null, 204);
+
+        return response()
+        ->json(null, 204);
     }
 }

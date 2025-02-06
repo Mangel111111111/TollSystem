@@ -11,15 +11,15 @@ class Record extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['station_Id', 'vehicle_Id', 'amount'];
+    protected $fillable = ['station_id', 'vehicle_id', 'amount'];
 
     public function station()
     {
-        return $this->belongsTo(Station::class, 'station_Id');
+        return $this->belongsTo(Station::class, 'station_id');
     }
 
     public function vehicle()
     {
-        return $this->belongsTo(Vehicle::class, 'vehicle_Id');
+        return $this->belongsTo(Vehicle::class, 'vehicle_id');
     }
 }

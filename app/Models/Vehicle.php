@@ -14,7 +14,7 @@ class Vehicle extends Model
 
     public function records()
     {
-        return $this->hasMany(Record::class, 'vehicle_Id');
+        return $this->hasMany(Record::class, 'vehicle_id');
     }
 
     public function calculateToll()
