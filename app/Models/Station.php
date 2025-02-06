@@ -11,8 +11,8 @@ class Station extends Model
 
     protected $fillable = ['name', 'city', 'totalCollected'];
 
-    public function tollRecords()
+    public function records()
     {
-        return $this->hasMany(TollRecord::class, 'tollStation_Id');
+        return $this->hasMany(Record::class, 'stationId');
     }
 }
