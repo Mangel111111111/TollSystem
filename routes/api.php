@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\RecordController;
 use App\Http\Controllers\Api\StationController;
 use App\Http\Controllers\Api\VehicleController;
 
@@ -22,3 +23,9 @@ Route::put('/vehicles/{id}', [VehicleController::class, 'update'])->name('apiUpd
 Route::delete('/vehicles/{id}', [VehicleController::class, 'destroy'])->name('apiDestroyVehicles');
 
 Route::get('/vehicles/{id}/toll-paid', [VehicleController::class, 'totalTollPaid'])->name('apiTotalTollPaid');
+
+Route::get('/records', [RecordController::class, 'index'])->name('apiIndexRecords');
+Route::post('/records', [RecordController::class, 'store'])->name('apiStoreRecords');
+Route::get('/records/{record}', [RecordController::class, 'show'])->name('apiShowRecords');
+Route::put('/records/{record}', [RecordController::class, 'update'])->name('apiUpdateRecords');
+Route::delete('/records/{record}', [RecordController::class, 'destroy'])->name('apiDestroyRecords');
